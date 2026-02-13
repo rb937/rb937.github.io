@@ -128,6 +128,32 @@ nav.hidden {
     text-transform: uppercase;
 }
 
+.logo a {
+    position: relative;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.logo a:hover {
+    color: var(--accent);
+}
+
+.logo a:hover::after {
+    width: 100%;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -162,7 +188,6 @@ nav.hidden {
 }
 
 /* focus outlines for accessibility (keyboard users only) */
-/* hide focus ring on mouse click but keep it for keyboard/tab navigation */
 a:focus,
 button:focus {
     outline: none;
@@ -478,4 +503,5 @@ h2 {
     background: rgba(56, 189, 248, 0.25);
     box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);
     transform: translateY(-5px);
+
 }
