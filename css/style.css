@@ -72,18 +72,6 @@ body {
     animation: float-orb-4 12s ease-in-out infinite;
 }
 
-/* Cursor Trail & Glow */
-#cursor-glow {
-    position: fixed;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.4) 0%, transparent 50%);
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: screen;
-    display: none;
-}
 
 /* Cursor Trail Particles */
 .trail-particle {

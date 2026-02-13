@@ -1,15 +1,9 @@
-const cursor = document.getElementById('cursor-glow');
-
 // Smoothly move the glow and create trail particles
 const particles = [];
 let lastParticleTime = 0;
 
-document.addEventListener('mousemove', (e) => {
-    // Update main cursor glow
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-
-    // Create trail particles at short intervals - denser effect
+// create and append particles for all pointer movement (mouse/pen/touch)
+document.addEventListener('pointermove', e => {
     const now = Date.now();
     if (now - lastParticleTime > 8) {
         createTrailParticle(e.clientX, e.clientY);
