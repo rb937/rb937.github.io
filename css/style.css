@@ -25,7 +25,7 @@ body {
     background-position: 0 0;
 }
 
-/* Ambient Orbs (Dynamic Background)*/
+/* Ambient Orbs (Dynamic Background) - Now interactive */
 .ambient-orb {
     position: fixed;
     border-radius: 50%;
@@ -161,7 +161,8 @@ nav.hidden {
     color: var(--accent);
 }
 
-/* focus outlines for keyboard only */
+/* focus outlines for accessibility (keyboard users only) */
+/* hide focus ring on mouse click but keep it for keyboard/tab navigation */
 a:focus,
 button:focus {
     outline: none;
@@ -477,5 +478,4 @@ h2 {
     background: rgba(56, 189, 248, 0.25);
     box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);
     transform: translateY(-5px);
-
 }
