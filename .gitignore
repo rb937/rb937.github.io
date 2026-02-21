@@ -1,0 +1,9 @@
+# IDE specific folders
+.idea/
+.vscode/
+*.iml
+*.project
+*.classpath
+
+# README files
+README.md

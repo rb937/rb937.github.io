@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Rajat Bisht – Computer Science undergraduate blending code and creative multimedia. Explore projects, tech stack, and get in touch.">
+    <title>Rajat Bisht | Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="orb-1 ambient-orb"></div>
+    <div class="orb-2 ambient-orb"></div>
+    <div class="orb-3 ambient-orb"></div>
+    <div class="orb-4 ambient-orb"></div>
+
+    <header>
+        <nav class="hidden" aria-label="Primary">
+            <div class="logo"><a href="#hero">RB<span class="accent">.</span></a></div>
+            <ul class="nav-links">
+                <li><a href="#stack">Tech Stack</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section id="hero">
+            <div class="hero-content hidden">
+                <p class="greeting">Hello, I'm</p>
+                <h1 class="hero-title">Rajat Bisht</h1>
+                <h2 class="subtitle">CS Undergraduate</h2>
+                <p class="bio">
+                    Pursuing a B.Tech in Computer Science. I merge algorithmic thinking with visual
+                    storytelling—crafting
+                    code, color grades, and digital experiences.
+                </p>
+                <div class="btn-group">
+                    <a href="#contact" class="btn primary">Contact Me</a>
+                    <a href="https://github.com/rb937" target="_blank" class="btn secondary"><i
+                            class="fab fa-github"></i>
+                        GitHub</a>
+                    <a href="media\resume.pdf" target="_blank" class="btn secondary"><i class="fas fa-file-alt"></i>
+                        Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="stack">
+            <h2 class="section-title hidden">My <span class="accent">Stack</span></h2>
+            <div class="grid-container">
+
+                <div class="card hidden delay-1">
+                    <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Computer Science</h3>
+                    <p>Currently in 3rd Year B.Tech. Focused on Data Structures, Java, Python, and Data Science.</p>
+                    <div class="tags">
+                        <span>Java</span>
+                        <span>Python</span>
+                        <span>Algorithms</span>
+                        <span>Data Science</span>
+                    </div>
+                </div>
+
+                <div class="card hidden delay-2">
+                    <div class="icon-box"><i class="fas fa-photo-video"></i></div>
+                    <h3>Multimedia</h3>
+                    <p>Professional video editing, color grading and photo editing. I treat visuals as data—optimizing
+                        flow, color theory, and aesthetics.</p>
+                    <div class="tags">
+                        <span>Premiere Pro</span>
+                        <span>Photoshop</span>
+                        <span>Color Grading</span>
+                    </div>
+                </div>
+
+                <div class="card hidden delay-3">
+                    <div class="icon-box"><i class="fa-solid fa-gamepad"></i></div>
+                    <h3>Game Development</h3>
+                    <p>Making some fun games with godot and unity. Along with making 3d models and pixel arts</p>
+                    <div class="tags">
+                        <span>Godot</span>
+                        <span>Unity</span>
+                        <span>Blender</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title hidden">Featured <span class="accent">Projects</span></h2>
+            <div class="grid-container">
+
+                <div class="project-card hidden delay-1">
+                    <div class="project-header">
+                        <h3>Fraud Detection System</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/rb937/fraud-detection-system" target="_blank"
+                                title="GitHub Repo"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <p>A Streamlit dashboard for detecting financial fraud using Scikit-Learn (Random Forest), SMOTE for
+                        class imbalance, and
+                        Geospatial Analysis for location verification.</p>
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Scikit-Learn</span>
+                        <span>Streamlit</span>
+                    </div>
+                </div>
+
+                <div class="project-card hidden delay-3">
+                    <div class="project-header">
+                        <h3>ChromaEngine</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/rb937/ChromaEngine/" target="_blank" title="GitHub Repo"><i
+                                    class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <p>A high-performance, non-destructive image rendering application built entirely from
+                        scratch. Utilizing direct-memory bitwise operations on
+                        ARGB channels for real-time
+                        processing. Spatial algorithms to automate and
+                        accelerate the visual
+                        asset pipeline for 2D pixel-art game development.</p>
+                    <div class="tags">
+                        <span>Java</span>
+                        <span>JavaFX</span>
+                        <span>OOP</span>
+                    </div>
+                </div>
+
+                <div class="project-card hidden delay-2">
+                    <div class="project-header">
+                        <h3>A 2d Sidescroller Game</h3>
+                        <h5><i>(*work in progress)</i></h5>
+                        <!-- <div class="project-links">
+                            <a href="https://github.com/rb937/JobSeekingApplication/" target="_blank" title="GitHub Repo"><i
+                                    class="fab fa-github"></i></a>
+                        </div> -->
+                    </div>
+                    <p>A 2d sidescroller game built with Godot Engine. Pixel art, action gameplay, with multiple levels
+                        and
+                        enemies.</p>
+                    <div class="tags">
+                        <span>Godot</span>
+                        <span>Pixel Art</span>
+                        <span>GDscript</span>
+                    </div>
+                </div>
+
+                <div class="project-card hidden delay-3">
+                    <div class="project-header">
+                        <h3>Job Seeking Application</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/rb937/JobSeekingApplication/" target="_blank"
+                                title="GitHub Repo"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <p>The Job Seeking Application is a simple yet efficient GUI application developed in Java. It
+                        simulates
+                        the core
+                        functionalities of a real-world job portal — allowing users to register and apply for jobs, and
+                        admins to post and
+                        manage job listings.</p>
+                    <div class="tags">
+                        <span>Java</span>
+                        <span>Swing/Awt</span>
+                        <span>GUI</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-box hidden">
+                <h2>Let's <span class="accent">Connect!</span></h2>
+                <p>Always open to discussing software engineering roles, data science projects, or creative tech
+                    collaborations.</p>
+                <div class="links">
+                    <a href="mailto:rajatbisht913@gmail.com" class="link-item"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://www.linkedin.com/in/rajatbisht937/" class="link-item"><i
+                            class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/rb937" class="link-item"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </section>
+        <footer class="footer"><i>© 2026 Rajat Bisht. Built from scratch.</i></footer>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/observer.js"></script>
+</body>
+
+</html>
