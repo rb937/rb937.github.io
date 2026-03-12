@@ -1,6 +1,6 @@
 :root {
     --bg: #0a0f18;
-    --card-bg: rgba(20, 30, 46, 0.7);
+    --card-bg: rgba(90, 90, 90, 0.1);
     --dot-bg: #1a1a1a;
     --dot-color: #4d4d4d;
     --dot-size: 1px;
@@ -28,7 +28,6 @@ body {
     background-attachment: fixed;
 }
 
-/* Ambient Orbs (Dynamic Background) */
 .ambient-orb {
     position: fixed;
     border-radius: 50%;
@@ -42,7 +41,7 @@ body {
 .orb-1 {
     width: 700px;
     height: 700px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.9), transparent);
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.8), transparent);
     top: -20%;
     left: -15%;
     animation: float-orb-1 18s ease-in-out infinite;
@@ -51,7 +50,7 @@ body {
 .orb-2 {
     width: 550px;
     height: 550px;
-    background: radial-gradient(circle, rgba(54, 57, 209, 0.778), transparent);
+    background: radial-gradient(circle, rgba(54, 57, 209, 0.7), transparent);
     bottom: -15%;
     right: -10%;
     animation: float-orb-2 15s ease-in-out infinite;
@@ -60,7 +59,7 @@ body {
 .orb-3 {
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(148, 54, 235, 0.8), transparent);
+    background: radial-gradient(circle, rgba(114, 54, 235, 0.8), transparent);
     top: 15%;
     right: -5%;
     animation: float-orb-3 16s ease-in-out infinite;
@@ -75,38 +74,54 @@ body {
     animation: float-orb-4 12s ease-in-out infinite;
 }
 
+.orb-5 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(54, 148, 235, 0.8), transparent);
+    top: 25%;
+    right: 15%;
+    animation: float-orb-3 16s ease-in-out infinite;
+}
 
-/* Cursor Trail Particles */
+.orb-6 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(125, 50, 237, 0.7), transparent);
+    bottom: 30%;
+    left: 20%;
+    animation: float-orb-4 12s ease-in-out infinite;
+}
+
 .trail-particle {
     position: fixed;
     pointer-events: none;
     z-index: 9998;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.8), transparent);
-    animation: trail-fade 0.5s ease-out forwards;
+    background: rgb(169, 255, 242);
+    box-shadow: 0 0 10px var(--accent);
+    animation: trail-fade 1s cubic-bezier(0, 0, 0.2, 1) forwards;
 }
 
 @keyframes trail-fade {
     0% {
         opacity: 1;
-        transform: translate(0, 0) scale(1);
+        transform: translate(0, 0) rotate(var(--rotation));
     }
 
     100% {
         opacity: 0;
-        transform: translate(0, -30px) scale(0.3);
+        transform: translate(var(--offset-x), var(--offset-y)) rotate(var(--rotation));
     }
 }
 
-/* Navigation Bar */
 nav {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: 70px;
-    background: rgba(10, 15, 24, 0.85);
-    backdrop-filter: blur(10px);
+    background: rgba(10, 15, 24, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     z-index: 1000;
     display: flex;
@@ -126,7 +141,6 @@ nav {
     text-transform: uppercase;
 }
 
-/* give the logo link the same hover animation as nav links */
 .logo a {
     position: relative;
     color: var(--text);
@@ -186,8 +200,6 @@ nav {
     color: var(--accent);
 }
 
-/* focus outlines for accessibility (keyboard users only) */
-/* hide focus ring on mouse click but keep it for keyboard/tab navigation */
 a:focus,
 button:focus {
     outline: none;
@@ -203,7 +215,6 @@ button:focus-visible {
     width: 100%;
 }
 
-/* Cursor Trail & Glow */
 section {
     min-height: 90vh;
     display: flex;
@@ -215,20 +226,23 @@ section {
 }
 
 .card {
-    background: var(--card-bg);
+    background: rgba(255, 255, 255, 0.03);
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     flex: 1 1 300px;
-    max-width: 500px;
+    max-width: 400px;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent);
+    border-color: rgba(56, 189, 248, 0.5);
     box-shadow: 0 16px 48px rgba(56, 189, 248, 0.1);
 }
 
@@ -264,21 +278,27 @@ h1 {
 }
 
 .hero-title {
-    background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgba(0, 150, 199, 1) 33%, rgba(0, 180, 216, 1) 66%, rgb(255, 255, 255) 100%);
-    background-size: 200% auto;
+    background: linear-gradient(300deg, #7dd3fc, #3885f8, #818cf8, #c084fc, #b147ef, #38c8f8, #4ffff6);
+    background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradient-shift 5s ease-in-out infinite;
+    animation: gradient-shift 12s ease infinite;
 }
 
 .footer {
-    background: linear-gradient(45deg, rgb(58, 245, 255) 0%, rgb(79, 255, 223) 50%, rgba(255, 255, 255, 1) 100%);
-    background-size: 200% auto;
+    margin-top: 5rem;
+    padding: 2rem;
+    background: linear-gradient(300deg, #7dd3fc, #38bdf8, #818cf8, #c084fc, #38bdf8, #7dd3fc);
+    background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradient-shift 5s ease-in-out infinite;
+    animation: gradient-shift 12s ease infinite;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    width: 100%;
 }
 
 .section-title {
@@ -297,7 +317,9 @@ h1 {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    background: linear-gradient(90deg, transparent, var(--accent), #c084fc, #f472b6, var(--accent), transparent);
+    background-size: 200% 100%;
+    animation: gradient-shift 3s linear infinite;
 }
 
 .bio {
@@ -338,11 +360,13 @@ h1 {
     display: inline-block;
     font-size: 0.8rem;
     padding: 4px 10px;
-    background: rgba(56, 189, 248, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     color: var(--accent);
     border-radius: 20px;
     margin-right: 5px;
     margin-top: 10px;
+    border: 1px solid rgba(56, 189, 248, 0.1);
+    backdrop-filter: blur(4px);
     transition: all 0.3s ease;
 }
 
@@ -351,22 +375,27 @@ h1 {
     box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
 }
 
-/* Project Cards */
 .project-card {
-    background: var(--card-bg);
+    background: rgba(255, 255, 255, 0.03);
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     flex: 1 1 300px;
-    max-width: 300px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent);
+    border-color: rgba(56, 189, 248, 0.5);
     box-shadow: 0 16px 48px rgba(56, 189, 248, 0.1);
 }
 
@@ -412,14 +441,13 @@ h1 {
     line-height: 1.6;
     margin-bottom: 1.5rem;
     font-size: 0.95rem;
+    flex-grow: 1;
 }
 
-/* Hero Content */
 .hero-content {
     max-width: 800px;
 }
 
-/* Contact Box */
 .contact-box {
     text-align: center;
     max-width: 600px;
@@ -481,7 +509,6 @@ h1 {
     left: 0;
 }
 
-/* Hero and Section Spacing */
 #hero {
     min-height: 100vh;
 }

@@ -26,93 +26,92 @@
 /* Floating Animations - More Dynamic */
 @keyframes float-orb-1 {
     0% {
-        transform: translate(0, 0);
+        transform: translate(0, 0) scale(1);
     }
 
     25% {
-        transform: translate(80px, 120px);
+        transform: translate(80px, 120px) scale(1.1);
     }
 
     50% {
-        transform: translate(40px, 200px);
+        transform: translate(40px, 200px) scale(1);
     }
 
     75% {
-        transform: translate(-50px, 100px);
+        transform: translate(-50px, 100px) scale(0.9);
     }
 
     100% {
-        transform: translate(0, 0);
+        transform: translate(0, 0) scale(1);
     }
 }
 
 @keyframes float-orb-2 {
     0% {
-        transform: translate(0, 0);
+        transform: translate(0, 0) scale(1);
     }
 
     25% {
-        transform: translate(-100px, 80px);
+        transform: translate(-100px, 80px) scale(0.9);
     }
 
     50% {
-        transform: translate(-60px, 160px);
+        transform: translate(-60px, 160px) scale(1.1);
     }
 
     75% {
-        transform: translate(20px, 120px);
+        transform: translate(20px, 120px) scale(1);
     }
 
     100% {
-        transform: translate(0, 0);
+        transform: translate(0, 0) scale(1);
     }
 }
 
 @keyframes float-orb-3 {
     0% {
-        transform: translate(0, 0);
+        transform: translate(0, 0) scale(1);
     }
 
     25% {
-        transform: translate(70px, -100px);
+        transform: translate(70px, -100px) scale(1.1);
     }
 
     50% {
-        transform: translate(120px, -40px);
+        transform: translate(120px, -40px) scale(0.95);
     }
 
     75% {
-        transform: translate(40px, 60px);
+        transform: translate(40px, 60px) scale(1.05);
     }
 
     100% {
-        transform: translate(0, 0);
+        transform: translate(0, 0) scale(1);
     }
 }
 
 @keyframes float-orb-4 {
     0% {
-        transform: translate(0, 0);
+        transform: translate(0, 0) scale(1);
     }
 
     25% {
-        transform: translate(-70px, 90px);
+        transform: translate(-70px, 90px) scale(0.9);
     }
 
     50% {
-        transform: translate(-40px, -70px);
+        transform: translate(-40px, -70px) scale(1.1);
     }
 
     75% {
-        transform: translate(60px, 50px);
+        transform: translate(60px, 50px) scale(1);
     }
 
     100% {
-        transform: translate(0, 0);
+        transform: translate(0, 0) scale(1);
     }
 }
 
-/* Gradient Shift Animation for Hero Title */
 @keyframes gradient-shift {
     0% {
         background-position: 0% center;
@@ -127,16 +126,15 @@
     }
 }
 
-/* Trail Fade Animation */
 @keyframes trail-fade {
     0% {
         opacity: 1;
-        transform: translate(0, 0) scale(1);
+        transform: translate(0, 0) rotate(var(--rotation)) scale(1);
     }
 
     100% {
         opacity: 0;
-        transform: translate(0, -15px) scale(0.15);
+        transform: translate(var(--offset-x), var(--offset-y)) rotate(var(--rotation)) scale(0);
     }
 }
 
