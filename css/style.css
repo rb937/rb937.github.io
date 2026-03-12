@@ -317,7 +317,7 @@ h1 {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, transparent, var(--accent), #c084fc, #f472b6, var(--accent), transparent);
+    background: linear-gradient(90deg, transparent, var(--accent), #986afa, var(--accent), transparent);
     background-size: 200% 100%;
     animation: gradient-shift 3s linear infinite;
 }
