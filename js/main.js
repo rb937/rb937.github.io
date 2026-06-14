@@ -43,3 +43,52 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+const titles = [
+    'Data Science',
+    'Builder',
+    'Game Developer',
+    'CS Undergrad'
+];
+
+const container = document.getElementById('headline-container');
+let currentIndex = 0;
+
+/**
+ * Function to simulate the typing effect
+ * @param {string} text - The text to be typed out.
+ * @param {function} callback - Function to execute when typing is finished.
+ */
+function typeWriter(text, callback) {
+    let i = 0;
+    container.innerHTML = '';
+
+    function type() {
+        if (i < text.length) {
+            container.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 80);
+        } else {
+            if (callback) {
+                callback();
+            }
+        }
+    }
+    type();
+}
+
+function cycleTitles() {
+    const currentTitle = titles[currentIndex];
+    typeWriter(currentTitle, () => {
+        setTimeout(() => {
+            container.innerHTML = '';
+
+            currentIndex = (currentIndex + 1) % titles.length;
+            cycleTitles();
+        }, 1600);
+    });
+}
+
+window.onload = function () {
+    cycleTitles();
+};

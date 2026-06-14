@@ -114,15 +114,15 @@
 
 @keyframes gradient-shift {
     0% {
-        background-position: 0% center;
+        background-position: 0% 50%;
     }
 
     50% {
-        background-position: 100% center;
+        background-position: 100% 50%;
     }
 
     100% {
-        background-position: 0% center;
+        background-position: 0% 50%;
     }
 }
 
@@ -135,6 +135,18 @@
     100% {
         opacity: 0;
         transform: translate(var(--offset-x), var(--offset-y)) rotate(var(--rotation)) scale(0);
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
     }
 }
 
