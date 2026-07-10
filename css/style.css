@@ -50,7 +50,7 @@ body {
 .orb-2 {
     width: 550px;
     height: 550px;
-    background: radial-gradient(circle, rgba(54, 57, 209, 0.7), transparent);
+    background: radial-gradient(circle, rgba(31, 34, 207, 0.7), transparent);
     bottom: -15%;
     right: -10%;
     animation: float-orb-2 15s ease-in-out infinite;
@@ -96,21 +96,9 @@ body {
     position: fixed;
     pointer-events: none;
     z-index: 9998;
-    background: rgb(169, 255, 242);
+    background: rgb(250, 191, 63);
     box-shadow: 0 0 10px var(--accent);
     animation: trail-fade 1s cubic-bezier(0, 0, 0.2, 1) forwards;
-}
-
-@keyframes trail-fade {
-    0% {
-        opacity: 1;
-        transform: translate(0, 0) rotate(var(--rotation));
-    }
-
-    100% {
-        opacity: 0;
-        transform: translate(var(--offset-x), var(--offset-y)) rotate(var(--rotation));
-    }
 }
 
 nav {
@@ -262,7 +250,6 @@ section {
     letter-spacing: 0.2px;
 }
 
-/* Typography */
 h1,
 h2,
 h3 {
@@ -290,7 +277,7 @@ h1 {
     font-size: 2em;
     margin-bottom: 10px;
     background: linear-gradient(300deg, #7dd3fc, #3885f8, #818cf8, #c084fc, #b147ef, #38c8f8, #4ffff6);
-    background-size: 400% 400%;
+    background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -298,20 +285,24 @@ h1 {
 }
 
 #headline-container {
-    display: inline;
+    display: inline-block;
     font-weight: 400;
+    min-height: 1.2em;
+    line-height: 1.2;
 }
 
-/* The Blinking Cursor Effect (broken)*/
-/* #headline-container::after {
-    content: '|';
-    animation: blink-caret 1s step-end infinite;
-    font-weight: 700;
-    color: #0d6b80;
-    margin-left: 5px;
-    position: relative;
-    z-index: 9999;
-} */
+#headline-container::after {
+    content: '';
+    display: inline-block;
+    width: 0.125em;
+    height: 1em;
+    margin-left: 0.1em;
+    vertical-align: -0.12em;
+    background: linear-gradient(300deg, #a5d4eb, #38bdf8, #818cf8, #066847);
+    background-size: 300% 300%;
+    border-radius: 999px;
+    animation: blink-caret 0.75s step-end infinite, gradient-shift 12s ease infinite;
+}
 
 .footer {
     margin-top: 5rem;
@@ -411,29 +402,15 @@ h1 {
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     border-left: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(24px);
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(24px);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.01);
     display: flex;
     flex-direction: column;
-}
-
-.intro-text-block h3 {
-    margin-top: 0;
-    font-size: 1.5em;
-    color: var(--primary-text-color, #23a3d1);
-    margin-bottom: 10px;
 }
 
 .intro-text-block p {
     font-size: 1.1em;
     line-height: 1.6;
     justify-content: center;
-    color: var(--text-muted);
 }
 
 .project-card {

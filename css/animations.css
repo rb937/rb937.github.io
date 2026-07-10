@@ -129,28 +129,25 @@
 @keyframes trail-fade {
     0% {
         opacity: 1;
-        transform: translate(0, 0) rotate(var(--rotation)) scale(1);
+        transform: translate(0, 0) rotate(var(--rotation));
     }
 
     100% {
         opacity: 0;
-        transform: translate(var(--offset-x), var(--offset-y)) rotate(var(--rotation)) scale(0);
+        transform: translate(var(--offset-x), var(--offset-y)) rotate(var(--rotation));
     }
 }
 
 @keyframes blink-caret {
-
-    from,
-    to {
-        opacity: 0;
+    0%, 50% {
+        opacity: 1;
     }
 
-    50% {
-        opacity: 1;
+    51%, 100% {
+        opacity: 0;
     }
 }
 
-/* Button & Link Hovers */
 a {
     text-decoration: none;
     color: inherit;
@@ -210,7 +207,6 @@ a {
     transform: translateY(-2px);
 }
 
-/* Card Animation */
 .card,
 .project-card {
     position: relative;

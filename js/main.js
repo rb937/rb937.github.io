@@ -54,11 +54,6 @@ const titles = [
 const container = document.getElementById('headline-container');
 let currentIndex = 0;
 
-/**
- * Function to simulate the typing effect
- * @param {string} text - The text to be typed out.
- * @param {function} callback - Function to execute when typing is finished.
- */
 function typeWriter(text, callback) {
     let i = 0;
     container.innerHTML = '';

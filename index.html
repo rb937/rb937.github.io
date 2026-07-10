@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Rajat Bisht – Computer Science undergraduate blending code and creative multimedia. Explore projects, tech stack, and get in touch.">
+        content="Rajat Bisht - Computer Science undergraduate blending code and creative multimedia. Explore projects, tech stack, and get in touch.">
     <title>Rajat Bisht | Portfolio</title>
 
-    <!-- Google Fonts -->
+    <meta property="og:title" content="Rajat Bisht | Portfolio">
+    <meta property="og:description"
+        content="Explore Rajat Bisht's portfolio featuring his tech stack, projects, and contact info.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -32,12 +35,12 @@
     <div class="orb-6 ambient-orb"></div>
 
     <header>
-        <nav class="hidden" aria-label="Primary">
+        <nav class="hidden" aria-label="Primary Navigation">
             <div class="logo"><a href="#hero">RB<span class="accent">.</span></a></div>
             <ul class="nav-links">
-                <li><a href="#stack">Tech Stack</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#stack" aria-label="Tech Stack Section">Tech Stack</a></li>
+                <li><a href="#projects" aria-label="Projects Section">Projects</a></li>
+                <li><a href="#contact" aria-label="Contact Section">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -52,10 +55,11 @@
                 </h1>
                 <p class="bio">
                     I am passionate about the intersection of computer science, design, and data. I enjoy taking complex
-                    problems—whether
+                    problem — whether
                     they live in raw data or a visual medium—and figuring out how to build a simple, user-friendly
                     solution. Building and learning through diverse technical challenges.
                 </p>
+
                 <div class="btn-group">
                     <a href="#contact" class="btn primary">Contact Me</a>
                     <a href="https://github.com/rb937" target="_blank" class="btn secondary"><i
@@ -70,13 +74,13 @@
         <section id="stack">
             <h2 class="section-title hidden">My <span class="accent">Stack</span></h2>
             <div class="intro-text-block">
-                <h3>Intro</h3>
                 <p>My current focus is exploring how these disciplines overlap. I view my skills not as separate
                     fields, but as
-                    complementary tools—using Python to process data, Java to build robust systems, and my knowledge
+                    complementary tools — using Python to process data, Java to build robust systems, and my knowledge
                     of color theory to
                     ensure the output is usable and aesthetically sound.</p>
             </div>
+
             <div class="grid-container">
                 <div class="card hidden delay-1">
                     <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
@@ -128,7 +132,6 @@
         <section id="projects">
             <h2 class="section-title hidden">Featured <span class="accent">Projects</span></h2>
             <div class="grid-container">
-
                 <div class="project-card hidden delay-1">
                     <div class="project-header">
                         <h3>Fraud Detection System</h3>
@@ -211,7 +214,6 @@
                         <span>GUI</span>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -223,14 +225,16 @@
                     learning about a cool piece of tech, I'm always ready to connect.</p>
                 <div class="links">
                     <a href="mailto:rajatbisht913@gmail.com" class="link-item"><i class="fas fa-envelope"></i> Email</a>
-                    <a href="https://www.linkedin.com/in/rajatbisht937/" class="link-item"><i
+                    <a href="https://www.linkedin.com/in/rajatbisht937/" target="_blank" class="link-item"><i
                             class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/rb937" class="link-item"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://github.com/rb937" target="_blank" class="link-item"><i class="fab fa-github"></i>
+                        GitHub</a>
                 </div>
             </div>
         </section>
-        <footer class="footer"><i>© 2026 Rajat Bisht. Built from scratch.</i></footer>
     </main>
+
+    <footer class="footer"><i>© 2026 Rajat Bisht. Built from scratch.</i></footer>
 
     <script src="js/main.js"></script>
     <script src="js/observer.js"></script>
