@@ -4,43 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Rajat Bisht - Computer Science undergraduate blending code and creative multimedia. Explore projects, tech stack, and get in touch.">
+    <meta name="description" content="Rajat Bisht builds systems, data tools, and interactive visual experiences.">
     <title>Rajat Bisht | Portfolio</title>
 
     <meta property="og:title" content="Rajat Bisht | Portfolio">
-    <meta property="og:description"
-        content="Explore Rajat Bisht's portfolio featuring his tech stack, projects, and contact info.">
+    <meta property="og:description" content="Computer science, data, image processing, and interactive media.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/responsive.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-    <div class="orb-1 ambient-orb"></div>
-    <div class="orb-2 ambient-orb"></div>
-    <div class="orb-3 ambient-orb"></div>
-    <div class="orb-4 ambient-orb"></div>
-    <div class="orb-5 ambient-orb"></div>
-    <div class="orb-6 ambient-orb"></div>
+    <div class="background-grid" aria-hidden="true"></div>
 
     <header>
-        <nav class="hidden" aria-label="Primary Navigation">
+        <nav aria-label="Primary Navigation">
             <div class="logo"><a href="#hero">RB<span class="accent">.</span></a></div>
             <ul class="nav-links">
-                <li><a href="#stack" aria-label="Tech Stack Section">Tech Stack</a></li>
-                <li><a href="#projects" aria-label="Projects Section">Projects</a></li>
-                <li><a href="#contact" aria-label="Contact Section">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#stack">Stack</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -48,39 +42,58 @@
     <main role="main">
         <section id="hero">
             <div class="hero-content hidden">
-                <p class="greeting">Hello, I'm</p>
-                <h1 class="hero-title">Rajat Bisht</h1>
-                <h1 class="main-heading">
+                <h1 class="hero-title">I build systems,<br><em>tools &amp; experiences.</em></h1>
+                <h2 class="main-heading">
                     <span id="headline-container"></span>
-                </h1>
+                </h2>
                 <p class="bio">
-                    I am passionate about the intersection of computer science, design, and data. I enjoy taking complex
-                    problem - whether
-                    they live in raw data or a visual medium-and figuring out how to build a simple, user-friendly
-                    solution. Building and learning through diverse technical challenges.
+                    I build data-driven systems and intelligent tools, with a growing interest in the visual and
+                    interactive side of technology.
                 </p>
 
                 <div class="btn-group">
                     <a href="#contact" class="btn primary">Contact Me</a>
-                    <a href="https://github.com/rb937" target="_blank" class="btn secondary"><i
+                    <a href="https://github.com/rb937" target="_blank" rel="noopener" class="btn secondary"><i
                             class="fab fa-github"></i>
                         GitHub</a>
-                    <a href="media/resume.pdf" target="_blank" class="btn secondary"><i class="fas fa-file-alt"></i>
+                    <a href="media/resume.pdf" target="_blank" rel="noopener" class="btn secondary"><i
+                            class="fas fa-file-alt"></i>
                         Resume</a>
                 </div>
             </div>
         </section>
 
-        <section id="stack">
-            <h2 class="section-title hidden">My <span class="accent">Stack</span></h2>
-            <div class="intro-text-block">
-                <p>My current focus is exploring how these disciplines overlap. I view my skills not as separate
-                    fields, but as
-                    complementary tools - using Python to process data, Java to build robust systems, and my knowledge
-                    of color theory to
-                    ensure the output is usable and aesthetically sound.</p>
+        <section id="about" class="about-section">
+            <div class="about-heading hidden">
+                <p class="eyebrow">01 / About</p>
+                <h2>Technical thinking,<br><em>creative instincts.</em></h2>
             </div>
+            <div class="about-content hidden delay-1">
+                <p class="lead">I like understanding how things work all the way down, then making them feel simple on
+                    the surface.</p>
+                <p>My work spans machine learning, local LLM systems, image processing, and interactive media. I’m
+                    currently learning through ambitious personal projects and practical industry experience.</p>
+                <div class="about-meta"><span>Recent experience</span><strong>Data Science Intern · Celebal Technologies
+                        · 2026</strong></div>
+            </div>
+        </section>
 
+        <section id="experience" class="experience-section">
+            <div class="experience-heading hidden">
+                <p class="eyebrow">02 / Experience</p>
+                <h2>Learning through<br><em>real problems.</em></h2>
+            </div>
+            <article class="experience-entry hidden delay-1">
+                <div class="experience-topline"><span>Jun 2026 to Aug 2026</span><span>Remote · CSI 2026 Program</span></div>
+                <h3>Data Science Intern <span>at Celebal Technologies</span></h3>
+                <p>Developed and evaluated regression and time-series forecasting models on automotive pricing data, then worked across supervised learning, clustering, and deep learning workflows.</p>
+                <div class="tags"><span>Python</span><span>ARIMA</span><span>GridSearchCV</span><span>ANN / CNN</span></div>
+            </article>
+        </section>
+
+        <section id="stack">
+            <h2 class="section-title hidden"><span class="eyebrow">04 / Toolkit</span>Tools for <em>making sense.</em>
+            </h2>
             <div class="grid-container">
                 <div class="card hidden delay-1">
                     <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
@@ -130,8 +143,21 @@
         </section>
 
         <section id="projects">
-            <h2 class="section-title hidden">Featured <span class="accent">Projects</span></h2>
+            <h2 class="section-title hidden"><span class="eyebrow">03 / Projects</span>Things I’ve <em>been
+                    building.</em></h2>
             <div class="grid-container">
+                <div class="project-card hidden delay-1 featured-project">
+                    <div class="project-header">
+                        <h3>Cortex: Local RAG System</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/rb937/Cortex" target="_blank" rel="noopener"
+                                title="GitHub Repo"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <p>A local-first retrieval-augmented generation system indexing 500+ pages with ChromaDB, supporting
+                        Ollama, OpenAI, and Anthropic through a swappable backend.</p>
+                    <div class="tags"><span>Python</span><span>ChromaDB</span><span>Ollama</span><span>RAG</span></div>
+                </div>
                 <div class="project-card hidden delay-1">
                     <div class="project-header">
                         <h3>Fraud Detection System</h3>
@@ -140,11 +166,9 @@
                                 title="GitHub Repo"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
-                    <p>A Streamlit dashboard for detecting financial fraud using Scikit-Learn (Random Forest), SMOTE for
-                        class imbalance, and
-                        Geospatial Analysis for location verification. I used Scikit-Learn and Streamlit to model the
-                        problem. The process of applying SMOTE was the most valuable learning
-                        experience for me.</p>
+                    <p>A real-time Streamlit fraud detection pipeline using Random Forest, SMOTE, cost-sensitive
+                        learning, and Haversine-distance features for location anomalies. The model achieved 92% recall
+                        on a heavily imbalanced dataset.</p>
                     <div class="tags">
                         <span>Python</span>
                         <span>Scikit-Learn</span>
@@ -194,26 +218,6 @@
                     </div>
                 </div>
 
-                <div class="project-card hidden delay-1">
-                    <div class="project-header">
-                        <h3>Job Seeking Application</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/rb937/JobSeekingApplication/" target="_blank"
-                                title="GitHub Repo"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <p>The Job Seeking Application is a simple yet efficient GUI application developed in Java. It
-                        simulates
-                        the core
-                        functionalities of a real-world job portal - allowing users to register and apply for jobs, and
-                        admins to post and
-                        manage job listings.</p>
-                    <div class="tags">
-                        <span>Java</span>
-                        <span>Swing/Awt</span>
-                        <span>GUI</span>
-                    </div>
-                </div>
             </div>
         </section>
 

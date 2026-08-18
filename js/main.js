@@ -1,36 +1,3 @@
-const particles = [];
-let lastParticleTime = 0;
-
-document.addEventListener('pointermove', e => {
-    const now = Date.now();
-    if (now - lastParticleTime > 10) {
-        createTrailParticle(e.clientX, e.clientY);
-        lastParticleTime = now;
-    }
-});
-
-function createTrailParticle(x, y) {
-    const particle = document.createElement('div');
-    particle.className = 'trail-particle';
-
-    const width = Math.random() * 2 + 1;
-    const height = Math.random() * 8 + 4;
-    particle.style.width = width + 'px';
-    particle.style.height = height + 'px';
-    particle.style.left = x + 'px';
-    particle.style.top = y + 'px';
-
-    const offsetX = (Math.random() - 0.5) * 60;
-    const offsetY = (Math.random() - 0.5) * 60;
-    particle.style.setProperty('--offset-x', offsetX + 'px');
-    particle.style.setProperty('--offset-y', offsetY + 'px');
-    particle.style.setProperty('--rotation', Math.random() * 360 + 'deg');
-
-    document.body.appendChild(particle);
-
-    setTimeout(() => particle.remove(), 2000);
-}
-
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -44,46 +11,90 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-const titles = [
-    'Data Science',
-    'Builder',
-    'Game Developer',
-    'CS Undergrad'
-];
+const particles = new Set();
+let lastParticleTime = 0;
+const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-const container = document.getElementById('headline-container');
-let currentIndex = 0;
-
-function typeWriter(text, callback) {
-    let i = 0;
-    container.innerHTML = '';
-
-    function type() {
-        if (i < text.length) {
-            container.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, 80);
-        } else {
-            if (callback) {
-                callback();
-            }
-        }
+document.addEventListener('pointermove', e => {
+    const now = Date.now();
+    if (now - lastParticleTime > 10 && !reducedMotionQuery.matches) {
+        createTrailParticle(e.clientX, e.clientY);
+        lastParticleTime = now;
     }
-    type();
+});
+
+const headlineContainer = document.getElementById('headline-container');
+const headlineWords = ['Software', 'AI / ML', 'Data Science'];
+let headlineIndex = 0;
+
+function typeHeadline(word) {
+    if (!headlineContainer) return;
+    headlineContainer.textContent = '';
+    let characterIndex = 0;
+
+    const typeNextCharacter = () => {
+        if (characterIndex < word.length) {
+            headlineContainer.textContent += word[characterIndex];
+            characterIndex += 1;
+            window.setTimeout(typeNextCharacter, 55);
+        } else {
+            window.setTimeout(() => eraseHeadline(word), 1300);
+        }
+    };
+
+    typeNextCharacter();
 }
 
-function cycleTitles() {
-    const currentTitle = titles[currentIndex];
-    typeWriter(currentTitle, () => {
-        setTimeout(() => {
-            container.innerHTML = '';
+function eraseHeadline(word) {
+    if (!headlineContainer) return;
+    if (headlineContainer.textContent.length > 0) {
+        headlineContainer.textContent = headlineContainer.textContent.slice(0, -1);
+        window.setTimeout(() => eraseHeadline(word), 30);
+    } else {
+        headlineIndex = (headlineIndex + 1) % headlineWords.length;
+        typeHeadline(headlineWords[headlineIndex]);
+    }
+}
 
-            currentIndex = (currentIndex + 1) % titles.length;
-            cycleTitles();
-        }, 1600);
+typeHeadline(headlineWords[headlineIndex]);
+
+function createTrailParticle(x, y) {
+    if (particles.size >= 120) {
+        const oldestParticle = particles.values().next().value;
+        oldestParticle.remove();
+        particles.delete(oldestParticle);
+    }
+
+    const particle = document.createElement('div');
+    particle.className = 'trail-particle';
+    particle.style.width = Math.random() * 2 + 1 + 'px';
+    particle.style.height = Math.random() * 8 + 4 + 'px';
+    particle.style.left = x + 'px';
+    particle.style.top = y + 'px';
+    particle.style.setProperty('--offset-x', (Math.random() - 0.5) * 60 + 'px');
+    particle.style.setProperty('--offset-y', (Math.random() - 0.5) * 60 + 'px');
+    particle.style.setProperty('--rotation', Math.random() * 360 + 'deg');
+    document.body.appendChild(particle);
+    particles.add(particle);
+    setTimeout(() => {
+        particles.delete(particle);
+        particle.remove();
+    }, 1600);
+}
+
+const sectionLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+const trackedSections = sectionLinks
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+const navigationObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            sectionLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+            });
+        }
     });
-}
+}, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
 
-window.onload = function () {
-    cycleTitles();
-};
+trackedSections.forEach(section => navigationObserver.observe(section));
